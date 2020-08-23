@@ -1,0 +1,4 @@
+- hosts: all
+  tasks:
+    - name: pip install
+      command: pip3 install docker-py

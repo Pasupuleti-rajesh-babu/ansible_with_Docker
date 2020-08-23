@@ -1,0 +1,16 @@
+- hosts: all
+  tasks:
+    - name: Add Appstream repo
+      yum_repository:
+        name: AppStream
+        description: appstream repo
+        baseurl: file:///dvd/AppStream
+        gpgcheck: no
+
+    - name: Add BaseoS repo
+      yum_repository:
+        name: BaseOS
+        description: baseos repo
+        baseurl: file:///dvd/BaseOS
+        gpgcheck: no
+    - command: yum repolist

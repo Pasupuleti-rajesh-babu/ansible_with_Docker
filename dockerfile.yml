@@ -1,0 +1,14 @@
+- hosts: all
+  tasks:
+    - name: copy dockerfile
+      copy:
+          src: Dockerfile
+          dest: /root/dockerfile/
+    - name: copy html page
+      copy:
+          src: index.html
+          dest: /root/dockerfile/
+    - name: run dockerfile
+      docker_image:
+           name: webserver
+           path: /root/dockerfile/

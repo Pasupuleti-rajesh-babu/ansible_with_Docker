@@ -1,0 +1,11 @@
+- hosts: all
+  tasks:
+    - name: docker_os
+      docker_container:
+         name: httpd_web
+         image: webserver
+         state: started
+         ports:
+           - "1622:80"
+         tty: true
+         detach: true
